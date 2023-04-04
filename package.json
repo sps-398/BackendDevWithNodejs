@@ -1,0 +1,24 @@
+{
+  "name": "backenddevwithnodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "start-server": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sps-398/BackendDevWithNodejs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sps-398/BackendDevWithNodejs/issues"
+  },
+  "homepage": "https://github.com/sps-398/BackendDevWithNodejs#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}

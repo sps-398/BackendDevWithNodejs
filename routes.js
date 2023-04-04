@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const eventHandler = (req, res) => {
+const routeHandler = (req, res) => {
     const url = req.url;
     const method = req.method;
     var msg="";
@@ -15,12 +15,14 @@ const eventHandler = (req, res) => {
             return res.end();
     });
     }
+
     if (url === '/message' && method === 'POST') {
         const body = [];
         req.on('data', (chunk) => {
         console.log(chunk);
         body.push(chunk);
         });
+        
         return req.on('end', () => {
         const parsedBody = Buffer.concat(body).toString();
         const message = parsedBody.split('=')[1];
@@ -31,6 +33,7 @@ const eventHandler = (req, res) => {
         });
         });
     }
+
     res.setHeader('Content-Type', 'text/html');
     res.write('<html>');
     res.write('<head><title>My First Page</title><head>');
@@ -39,4 +42,4 @@ const eventHandler = (req, res) => {
     res.end();
 }
 
-exports = eventHandler;
+exports.routeHandler = routeHandler;
